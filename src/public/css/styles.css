@@ -1,3 +1,10 @@
+body {
+  background-image: url("/img/bck.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .ml-back {
     margin-left: 5px;
 }
@@ -23,19 +30,6 @@
     align-items: center;
     margin-left: 500px;
   }
-
-.bg-image {
-    background-image: url("/img/bck.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 90vh;
-  }
-  
-.bg-white {
-    background-color: white;
-    padding: 20px;
-  }
   
 .post {
     background-color: #f0f0f0;
@@ -54,7 +48,7 @@
     font-size: 16px;
   }
   
-  #login-register-button {
-    background-color: #b550ff;
-    border-color: #b550ff;
-  }
+#login-register-button {
+  background-color: #b550ff;
+  border-color: #b550ff;
+}
