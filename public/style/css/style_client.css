@@ -12,6 +12,10 @@ body {
     align-items: stretch;
     height: 100vh;
     user-select: none;
+    background-image: url("/img/bck.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #messages {
@@ -23,11 +27,13 @@ body {
     scroll-behavior: smooth;
     padding-bottom: 48px;
     user-select: none;
+    background-color: #fff;
 }
 
 #messages>li {
     padding: .5rem 1rem;
     user-select: none;
+    background-color: #fff;
 }
 
 #messages>li:nth-child(odd) {
@@ -43,6 +49,7 @@ body {
     height: 100%;
     position: relative;
     user-select: none;
+    background-color: #fff;
 }
 
 #form {
