@@ -31,18 +31,19 @@ router.get('/cerrarsesion', async (req, res) => {
 
 // Registro de usuario
 router.post('/register', async (req, res) => {
-    const { email, name, apellido, pass } = req.body;
+    const { email, name, apellido, id, pass } = req.body;
 
-    if (email && name && pass) {
-        conectado.query('SELECT * FROM usuarios WHERE correo = ?', [email], async (error, results) => {
+    if (email && name && pass && id && apellido) {
+        conectado.query('SELECT * FROM Usuarios WHERE Correo = ?', [email], async (error, results) => {
             if (error) {
-                renderErrorAlert(res, "Ocurrió un error inesperado");
+                renderErrorAlert("register", "Ocurrió un error inesperado");
             } else if (results.length === 0) {
                 const newUser = {
                     correo: email,
                     nombres: name,
                     apellidos: apellido,
                     passwd: pass,
+                    Identificacion: id,
                     tipousuario_idtipousuario: 2
                 };
 
