@@ -1,8 +1,11 @@
 const router = require('express').Router();
 const path = require('path');
 const conectado = require('../database/mysql');
+const bcrypt = require('bcrypt');
 
 const rootdir = __dirname.slice(0, -6);
+
+const saltRounds = 10;
 
 // Función para renderizar alertas de error
 function renderErrorAlert(pagina, message) {
@@ -38,11 +41,13 @@ router.post('/register', async (req, res) => {
             if (error) {
                 renderErrorAlert("register", "Ocurrió un error inesperado");
             } else if (results.length === 0) {
+
+
                 const newUser = {
                     correo: email,
                     nombres: name,
                     apellidos: apellido,
-                    passwd: pass,
+                    passwd: bcrypt.hash(pass, saltRounds, (err, hash) => { return hash }),
                     Identificacion: id,
                     tipousuario_idtipousuario: 2
                 };
@@ -69,21 +74,24 @@ router.post('/auth', async (req, res) => {
 
     if (username && password) {
         conectado.query('SELECT * FROM usuarios WHERE correo = ? ', [username], (error, results) => {
-            if (error || results.length === 0 || password !== results[0].passwd) {
-                renderErrorAlert(res, "Usuario y/o contraseña incorrecta");
-            } else {
-                req.session.loggedin = true;
-                req.session.user = results[0].correo;
-                req.session.name = results[0].nombres;
-                req.session.apellido = results[0].apellidos;
-                req.session.iduser = results[0].idtipousuario;
-                req.session.tipeuser = results[0].tipousuario_idtipousuario;
 
-                if (!remember) {
-                    req.session.cookie.expires = false;
+            bcrypt.compare(password, results[0].passwd, (err, result) => {
+                if (result) {
+                    req.session.loggedin = true;
+                    req.session.user = results[0].correo;
+                    req.session.name = results[0].nombres;
+                    req.session.apellido = results[0].apellidos;
+                    req.session.iduser = results[0].idtipousuario;
+                    req.session.tipeuser = results[0].tipousuario_idtipousuario;
+
+                    if (!remember) {
+                        req.session.cookie.expires = false;
+                    }
+                    res.redirect('/usuario.html');
+                } else {
+                    renderErrorAlert(res, "Usuario y/o contraseña incorrecta");
                 }
-                res.redirect('/usuario.html');
-            }
+            });
         });
     } else {
         renderErrorAlert("login", "Campos vacíos");
