@@ -31,7 +31,8 @@
 <!-- STREAM -->
       
     
-    <div id="chatlive">
+    <div id="stream">
+      <div id="chatlive">
         <section id="chat">
             <ul id="messages"></ul>
             <form id="form">
@@ -39,10 +40,12 @@
             <button type="submit" id="button1">Enviar</button>
             </form>
         </section>
+      </div>
+      <div id="share">
+        <button id='my-button'>Start Stream</button>
+        <video autoplay id="video"></video>
+      </div>
     </div>
-
-    <button id='my-button'>Start Stream</button>
-    <video autoplay id="video"></video>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="/style/js/script_stream.js"></script>
