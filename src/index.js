@@ -2,9 +2,14 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const app = express();
+const socketIo = require('socket.io');
+const http = require('http');
+//app.use(express.urlencoded({ extended: false }));
+//app.use(express.json());
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+
+server = http.createServer(app);
+const io = socketIo(server);
 
 //dotenv var.entorno
 const dotenv = require("dotenv");
@@ -28,7 +33,6 @@ app.use(session(sessionConfig));
 
 //DB
 const conectado = require('./database/mysql');
-//const req = require('express/lib/request');
 
 //recursos
 app.use(express.static('public'));
@@ -37,6 +41,19 @@ app.use(express.static('public'));
 app.use(require('./routes/routes.js'));
 
 //server
-app.listen(process.env.SERVER_PORT, () => {
+
+io.on('connection', (socket) => {
+    console.log('Un usuario se ha conectado')
+
+    socket.on('disconnect', () => {
+        console.log('Un usuario se ha desconectado')
+    })
+
+    socket.on('chat message', (msg) => {
+        io.emit('chat message', msg)
+    })
+})
+
+server.listen(process.env.SERVER_PORT, () => {
     console.log("server on : " + process.env.SERVER_PORT);
 });

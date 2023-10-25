@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    height: 100vh;
+    user-select: none;
+    background-image: url("/img/bck.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    height: calc(100vh - 48px);
+    scroll-behavior: smooth;
+    padding-bottom: 48px;
+    user-select: none;
+    background-color: #fff;
+}
+
+#messages>li {
+    padding: .5rem 1rem;
+    user-select: none;
+    background-color: #fff;
+}
+
+#messages>li:nth-child(odd) {
+    background: #faf3f3;
+    user-select: none;
+}
+
+#chat {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 350px;
+    height: 100%;
+    position: relative;
+    user-select: none;
+    background-color: #fff;
+}
+
+#form {
+    bottom: 0;
+    display: flex;
+    height: 48px;
+    left: 0;
+    padding: 4px;
+    position: absolute;
+    right: 15px;
+    user-select: none;
+}
+
+#input {
+    border-radius: 9999px;
+    border: 1px solid #eee;
+    flex: 2;
+    margin: 4px;
+    padding: 0 8px;
+    user-select: none;
+}
+
+#input:focus {
+    outline: 0;
+    user-select: none;
+}
+
+#form>button {
+    background: #09f;
+    color: #fff;
+    border: 0;
+    margin: 4px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+#form>button:hover {
+    background: #0cf;
+    user-select: none;
+}
