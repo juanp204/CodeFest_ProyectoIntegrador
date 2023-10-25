@@ -31,26 +31,25 @@
 <!-- STREAM -->
       
     
-    <div id="stream">
-      <div id="chatlive">
-        <section id="chat">
-            <ul id="messages"></ul>
-            <form id="form">
-            <input type="text" name="message" id="input" placeholder="Escribe un Mensaje" autocomplete="off" />
-            <button type="submit" id="button1">Enviar</button>
-            </form>
-        </section>
-      </div>
-      <div id="share">
-        <button id='my-button'>Start Stream</button>
-        <video autoplay id="video"></video>
-      </div>
-    </div>
-
+<div id="stream">
+  <div id="share">
+    <button id='my-button'>Start Stream</button>
+    <video autoplay id="video"></video>
+  </div>
+  <div id="chatlive">
+    <section id="chat">
+      <ul id="messages"></ul>
+      <form id="form">
+        <input type="text" name="message" id="input" placeholder="Escribe un Mensaje" autocomplete="off" />
+        <button type="submit" id="button1">Enviar</button>
+      </form>
+    </section>
+  </div>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="/style/js/script_stream.js"></script>
     <script src="/style/js/bootstrap.bundle.min.js"></script>
-    <script src="/style/js/script_socket.js"></script>
+    <script src="/style/js/script_socket.js" type="module"></script>
 </body>
 
 </html>

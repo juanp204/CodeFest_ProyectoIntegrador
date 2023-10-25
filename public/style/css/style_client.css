@@ -97,3 +97,24 @@ body {
 .navbar {
     height: 45px;
 }
+
+#stream {
+    display: flex;
+  }
+  
+  #share {
+    flex: 1; /* Hace que ocupe el 50% del ancho disponible */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #my-button {
+    margin-top: 20px; /* Espacio desde arriba */
+  }
+  
+  #video {
+    display: block;
+    margin: 20px auto; /* Centrar verticalmente */
+    max-width: 100%; /* Ajustar al ancho del contenedor */
+    max-height: calc(100vh - 200px); /* Altura máxima (ajustable según tus necesidades) */
+  }
