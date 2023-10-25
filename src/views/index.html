@@ -1,33 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiveChat</title>
-    <link rel="stylesheet" href="/style/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/style/css/style_client.css">
+  <meta charset="UTF-8">
+  <meta name="description" content="Espacio dedicado al Streaming de las jornadas de socialización de la FISI">
+  <meta name="author" content="Nuggets Team">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FISI Streaming</title>
+  <!-- custom css link -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- bootstrap css link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <!-- boxicons link -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
 <body>
-
-
-
-
-    <div id="chatlive">
-        <section id="chat">
-            <ul id="messages"></ul>
-            <form id="form">
-                <input type="text" name="message" id="input" placeholder="Escribe un Mensaje" autocomplete="off" />
-                <button type="submit" id="button1">Enviar</button>
-            </form>
-        </section>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="ml-back navbar-brand" href="#"><img src="img/logoupb.png" width="125px" height="auto"></a>
+    <button class=" mr-menu navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-center" href="#"> <img src="img/login.png" width="20px" height="auto"> <br> Iniciar
+            Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center" href="#"> <img src="img/register.png" width="20px" height="auto"> <br>
+            Registrarse</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <!-- body content -->
+  <div class="bg-image">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bnv"> Bienvenid@ </h5>
+          <h1> Streaming FISI: crea, comparte y aprende junto a la comunidad de ingenieros! </h1>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quod ratione nihil nulla ex eaque,
+            impedit consectetur expedita neque, velit molestias aliquam. Cum deleniti accusantium alias, aperiam ipsa
+            sint iusto. </p>
+          <button type="submit" class="btn btn-primary ml-auto top-0">Comenzar</button>
+        </div>
+        <div class="col-md-6">
+          <img src="img/fisi.png" class="img-fluid" alt="FISI" width="500">
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src="/style/js/bootstrap.bundle.min.js" type="module"></script>
-    <script src="/style/js/script_socket.js" type="module"></script>
+  <div class="bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post">
+            <h2>Título de la Publicación</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel arcu quis est luctus vestibulum. Proin
+              sit amet urna non purus vehicula blandit at a arcu. Nunc et purus in turpis euismod vehicula.
+              Nullam eget odio vel libero sollicitudin suscipit. Vivamus scelerisque, dui et vehicula congue, ligula
+              orci posuere sapien, at tincidunt dui orci nec urna. Fusce id nulla ac odio congue rhoncus a non massa.
+              Nulla facilisi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
 </body>
 
 </html>

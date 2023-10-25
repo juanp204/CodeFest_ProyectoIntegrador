@@ -1,0 +1,60 @@
+.ml-back {
+    margin-left: 5px;
+}
+
+.mr-menu {
+    margin-right: 5px;
+}
+
+.bnv {
+    background-color: rgb(255, 213, 0);
+    border-radius: 5px;
+    padding: 5px;
+    max-width: fit-content;
+  }
+  
+.container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 500px;
+  }
+
+.bg-image {
+    background-image: url("/img/bck.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 90vh;
+  }
+  
+.bg-white {
+    background-color: white;
+    padding: 20px;
+  }
+  
+.post {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+.post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+.post p {
+    font-size: 16px;
+  }
+  
+  #login-register-button {
+    background-color: #b550ff;
+    border-color: #b550ff;
+  }
